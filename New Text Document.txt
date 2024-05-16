@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>STUDENT ATTENDANCE MANAGEMENT SYSTEM</title>
+</head>
+<body>
+<h2><center>LOGIN AS</center></h2>
+<br>
+<br>
+<h3>
+<center>
+	<table>
+		<tr>
+			<th>
+				<a href="admin.html">ADMIN</a>
+			</th>
+		</tr>
+	</table>
+</center>
+</h3>
+<br>
+<br>
+<h3>
+<center>
+	<table>
+		<tr>
+			<th>
+				<a href="teacherlogin.html">TEACHER</a>
+			</th>
+		</tr>
+	</table>
+</center>
+</h3>
+<br>
+<br>
+<h3>
+<center>
+	<table>
+		<tr>
+			<th>
+				<a href="studentlogin.html">STUDENT</a>
+			</th>
+		</tr>
+	</table>
+</center>
+</h3>
+<br>
+</body>
+</html>

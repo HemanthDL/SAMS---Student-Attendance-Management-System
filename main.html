@@ -2,65 +2,41 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SAMS</title>
-	<style type="text/css">
-		body {
-			background-image: url('JSSSTU-Mysore.jpg');
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			background-size: 100%;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMS</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
+    <div class="container">
+        <header class="header">
+            <h1>STUDENT'S ATTENDANCE MANAGEMENT SYSTEM</h1>
+        </header>
 
-	<body>
-		<center>
-			<h1>STUDENT's ATTENDANCE MANAGEMENT SYSTEM</h1>
-		</center>
-		<br>
-		<br>
-		<h2>
-			<center>LOGIN AS</center>
-		</h2>
-		<br>
-		<h2>
-			<center>
-				<table tablecellspacing="5" cellpadding="5%" border="4" bgcolor="#F0F8FF">
+        <main class="main-content">
+            <h2>LOGIN AS</h2>
+            <div class="login-section">
+                <center>
+                    <div class="login-card admin-card">
+                        <a href="Admin/adminlogin.php">ADMIN</a>
+                    </div><br>
+                    <div class="login-card teacher-card">
+                        <a href="Teacher/teacherlogin.php">TEACHER</a>
+                    </div><br>
+                    <div class="login-card student-card">
+                        <a href="Student/studentlogin.php">STUDENT</a>
+                    </div><br>
+                </center>
+                
+            </div>
+        </main>
 
-					<tr>
-						<th>
-							<a href="Admin/adminlogin.php">ADMIN</a>
-						</th>
-					</tr>
-				</table>
-			</center>
-		</h2>
-		<h2>
-			<center>
-				<table tablecellspacing="5" cellpadding="5%" border="4" bgcolor="#F0F8FF">
-					<tr>
-						<th>
-							<a href="Teacher/teacherlogin.php">TEACHER</a>
-						</th>
-					</tr>
-				</table>
-			</center>
-		</h2>
-		<h2>
-			<center>
-				<table tablecellspacing="5" cellpadding="5%" border="4" bgcolor="#F0F8FF">
-					<tr>
-						<th>
-							<a href="Student/studentlogin.php">STUDENT</a>
-						</th>
-					</tr>
-				</table>
-			</center>
-		</h2>
-	</body>
+        <footer class="footer">
+            <p>&copy; 2024 Student's Attendance Management System. All rights reserved.</p>
+            <p><a href="contact.html">Contact Us</a> | <a href="about.html">About</a></p>
+        </footer>
+    </div>
+</body>
 
 </html>

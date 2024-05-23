@@ -16,9 +16,6 @@
                     <input type="date" name="adate" placeholder="yyyy-mm-dd" required>
                 </td>
             </tr>
-            <!-- <tr><td align="left">Subject ID</td><td align="left"><input type="text" name="subid" required></td></tr>
-    <tr><td align="left">Semester</td><td align="left"><input type="text" name="sem" required></td></tr>
-    <tr><td align="left">Section</td><td align="left"><input type="text" name="sec" required></td></tr> -->
             <?php
             include('../connection.php');
             session_start();
@@ -73,25 +70,39 @@
             </tr>
         </form>
         <?php
-            if(isset($_POST['submit'])){
+            include('../connection.php');
+            $tid = $_SESSION['tid'];
+            $dept = $_SESSION['dept'];
+            $errorMessage = '';
+
+            if (isset($_POST['submit'])) {
                 $subid = $_POST['sub_id'];
                 $sec = $_POST['sec'];
                 $sem = $_POST['sem'];
                 $entered = $_POST['adate'];
-                $check = "select distinct adate from attendance where sem='$sem' and sec='$sec' and sub_id='$subid' and tid='$tid' order by adate asc";
+                $check = "SELECT DISTINCT adate FROM attendance WHERE sem='$sem' AND sec='$sec' AND sub_id='$subid' AND tid='$tid' ORDER BY adate ASC";
                 $checkexe = $conn->query($check);
-                echo "details: ".$subid."\t".$sec."\t".$sem."\t".$entered."\t".$tid."\t";
-                while($r = $checkexe->fetch_assoc()){
-                    echo "date : ".$r['adate']."\t";
-                    $db_date = strtotime($r['adate']); 
+
+                while ($r = $checkexe->fetch_assoc()) {
+                    $db_date = strtotime($r['adate']);
                     $entered_date = strtotime($entered);
-                    echo "timestamp: ".$db_date."\tenr: ".$entered_date."\t";
-                    if($db_date == $entered_date){
-                        echo "<script type='text/javascript'>alert('Attendance Limit for the day is reached!!\nEnter New Date')</script>";
+
+                    if ($db_date == $entered_date) {
+                        $errorMessage = 'Attendance Limit for the day is reached! Enter a New Date';
+                        break;
                     }
                 }
             }
         ?>
+
+        <?php if ($errorMessage): ?>
+        <script type="text/javascript">
+        alert('<?php echo $errorMessage; ?>');
+        window.location.href = 'teachermain.php'
+        </script>
+        <?php endif; ?>
+
+
         <tr></tr>
         <tr></tr>
         <form method="post" action="teachermain.php">

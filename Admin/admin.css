@@ -10,17 +10,27 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #f2f2f2;
-    /* background: url('../pexels-abby-chung-371167-1106468.jpg') no-repeat center center/cover; Update the URL */
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure body takes at least full viewport height */
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex: 1;
+    margin-bottom: auto; 
     background: rgba(255, 255, 255, 0.45);
 }
+
+.admin-options {
+    position: absolute;
+    top: 115px;
+    left: 400px;
+}
+
 .navbar {
     background: rgba(0, 0, 0, 0.9);
     color: #fff;
@@ -57,12 +67,17 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.main-container {
+     /* Grow to fill remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .main-content {
     text-align: center;
-    margin-bottom: 30px;
+    /* Pushes the footer to the bottom */
     padding-bottom: 50px;
-  
 }
 
 .admin-options {
@@ -112,7 +127,6 @@ body {
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    bottom: 0;
 }
 
 .footer p {
@@ -122,7 +136,6 @@ body {
 .footer a {
     color: #fff;
     text-decoration: none;
-
 }
 
 .footer a:hover {

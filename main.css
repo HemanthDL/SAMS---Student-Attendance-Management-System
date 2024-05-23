@@ -1,159 +1,166 @@
-/* General reset */
-body, h1, h2, p, a {
+/* Reset some basic elements */
+body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-/* Container styling */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Body styling */
 body {
-    background-image: url('JSSSTU-Mysore.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    height: 100vh;
+    width: 100vw;
+    background: url('pexels-abby-chung-371167-1106468.jpg') no-repeat center center/cover; /* Update the URL */
+    margin: 0;
 }
 
-/* Header styling */
+.container {
+    display: flex;
+    flex-direction: column;
+     justify-content: space-between; 
+    min-height: 100vh; /* Ensure the container takes up at least the height of the viewport */
+    max-width: 1400px; /* Maximum width of the container */
+    /* margin: 0 auto; Center the container horizontally */
+     /* Padding for the content */
+}
+
 .header {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    animation: fadeInDown 1s ease-in-out;
+   width:100vw;
 }
 
 .header h1 {
     font-size: 2.5em;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 10px;
 }
 
-/* Main content styling */
-.main-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1.5s ease-in-out;
-    text-align: center;
+.navbar {
+    margin-top: 10px;
 }
 
-.main-content h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-   display: flex; 
+.navbar ul {
+    list-style: none;
+    display: flex;
     justify-content: center;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ff6347;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro {
+    margin-bottom: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+
+}
+
+.intro h2 {
+    font-size: 2em;
+    color: #413232;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #333131;
+    font-weight: 520;
+
 }
 
 .login-section {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
     display: flex;
-    flex-direction: column-reverse;
-    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-options {
+    display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
+    width: 100%;
 }
 
 .login-card {
-    background-color: #F0F8FF;
+    background: #007BFF;
+    color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     flex: 1;
     max-width: 200px;
-    text-align: center;
-}
-
-.admin-card {
-    background-color: #28a745;
-}
-
-.teacher-card {
-    background-color: #17a2b8;
-}
-
-.student-card {
-    background-color: #ffc107;
 }
 
 .login-card a {
-    text-decoration: none;
     color: #fff;
-    font-size: 1.5em;
-    font-weight: bold;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
 .login-card:hover {
-    transform: translateY(-5px);
-    opacity: 0.9;
+    transform: translateY(-10px);
+    background: #0056b3;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer styling */
 .footer {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
     text-align: center;
-    border-radius: 10px;
-    margin-top: 20px;
-    animation: fadeInUp 1s ease-in-out;
+    padding: 10px 0;
+    width: 100vw;
+  
 }
 
 .footer p {
-    color: #fff;
+    margin: 5px 0;
 }
 
 .footer a {
-    color: #007BFF;
+    color: #fff;
     text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
 }
 
 .footer a:hover {
     text-decoration: underline;
-    color: #0056b3;
-}
-
-/* Keyframes for animations 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }

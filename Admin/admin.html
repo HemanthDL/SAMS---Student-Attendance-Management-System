@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ADMIN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link rel="stylesheet" type="text/css" href="admin.css">
 </head>
 <body>
-<br>
-<br>
-<br>
-<h1>
-<center>
-	<a href="admin_addsub.php">
-		<input type="button" value="ADD SUBJECT">
-	</a>
-</center>
-</h1>
-<h2>
-<center>
-	<a href="admin_addt.php">
-		<input type="button" value="ADD TEACHER">
-	</a>
-</center>
-</h2>
-<h2>
-<center>
-	<a href="admin_addst.php">
-		<input type="button" value="ADD STUDENT">
-	</a>
-</center>
-</h2>
-<h2>
-	<center>
-		<a href="assignclass.php">
-			<input type="button" value="ASSIGN CLASS">
-		</a>
-	</center>
-	</h2>
-<h2>
-<center>
-	<a href="../main.html">
-		<input type="button" value="HOME">
-	</a>
-</center>
-</h2>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../main.html">HOME</a></li>
+            <li><a href="Admin/adminlogin.php">ADMIN</a></li>
+            <li><a href="Teacher/teacherlogin.php">TEACHER</a></li>
+            <li><a href="Student/studentlogin.php">STUDENT</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <main class="main-content">
+            <div class="admin-options">
+                <div class="admin-option">
+                    <a href="admin_addsub.php">
+                        <button>ADD SUBJECT</button>
+                    </a>
+                </div>
+                <div class="admin-option">
+                    <a href="admin_addt.php">
+                        <button>ADD TEACHER</button>
+                    </a>
+                </div>
+                <div class="admin-option">
+                    <a href="admin_addst.php">
+                        <button>ADD STUDENT</button>
+                    </a>
+                </div>
+                <div class="admin-option">
+                    <a href="assignclass.php">
+                        <button>ASSIGN CLASS</button>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Student's Attendance Management System. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="about.html">About</a></p>
+    </footer>
 </body>
 </html>

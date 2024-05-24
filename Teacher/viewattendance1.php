@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="attendence.css">
+    <link rel="stylesheet" type="text/css" href="../Admin/admin.css">
 </head>
 
 <body>
-
-    <form action="viewattendance1.php" method="post">
-        <?php
+<nav class="navbar">
+        <ul>
+            <li><a href="teachermain.php">HOME</a></li>
+            <li><a href="adminlogin.php">ADMIN</a></li>
+            <li><a href="../Teacher/teacherlogin.php">TEACHER</a></li>
+            <li><a href="../Student/studentlogin.php">STUDENT</a></li>
+        </ul>
+</nav>
+<div class="container">
+    <div class="info">
+    <center>
+    <table>
+        <form action="viewattendance1.php" method="post">
+            <?php
             include('../connection.php');
             session_start();
             $tid=$_SESSION['tid'];
@@ -22,12 +34,12 @@
             if($exesub == true){
                 
 
-                echo "Subject : <select name='subject'>";
+                echo "<tr><td>Subject :</td><td> <select name='subject'>";
                 while($rsub=$exesub->fetch_assoc()){
                     echo "<option value='".$rsub['sub_id']."'>".$rsub['sub_id']."</option>";
                     $i=$i+1;
                 }
-                echo "</select><br>";
+                echo "</select></td></tr>";
             }
 
             $subsql="select distinct sem from assignclass where tid='$tid' and dept='$dept' order by sem";
@@ -35,12 +47,12 @@
             if($exesub == true){
                 
 
-                echo "Semester : <select name='sem'>";
+                echo "<tr><td>Semester :</td><td><select name='sem'>";
                 while($rsub=$exesub->fetch_assoc()){
                     echo "<option value='".$rsub['sem']."'>".$rsub['sem']."</option>";
                     $i=$i+1;
                 }
-                echo "</select><br>";
+                echo "</select></td></tr>";
             }
 
             $subsql="select distinct sec from assignclass where tid='$tid' and dept='$dept' order by sec asc";
@@ -48,28 +60,30 @@
             if($exesub == true){
                 
 
-                echo "Section : <select name='sec'>";
+                echo "<tr><td>Section :</td><td> <select name='sec'>";
                 while($rsub=$exesub->fetch_assoc()){
                     echo "<option value='".$rsub['sec']."'>".$rsub['sec']."</option>";
                     $i=$i+1;
                 }
-                echo "</select><br>";
+                echo "</select></td></tr>";
             }
         ?>
-        <br><br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
-    <br>
-    <br>
-    <form method="post" action="teachermain.php">
-        <tr>
-            <td></td>
-            <td align="left"><input type="submit" name="submit" value="return to main page"></td>
-        </tr>
-    </form><br><br>
+            <tr><td></td><td></td></tr>
+            <tr>
+                <td><input type="submit" name="submit" value="Submit"></td>
+                <td></td>
+            </tr>
+            
+        </form>
+    </table>
+    </center>
+    </div>
+</div>
+    
+    <br><br>
     <center>
 
-        <table class="designtable" border="1" bgcolor="#FFF5EE">
+        <table class="designtable">
             <tr>
                 <th>Roll No.</th>
                 <th>USN</th>
@@ -114,7 +128,13 @@
                                 
                             //
                             while($rowinsql=$exeinsql->fetch_assoc()){
-                                echo "<td>".$rowinsql['astatus']."</td>";
+                                // if($rowinsql['astatus'] == "absent"){
+                                //     echo "<td bgcolor='red'>".$rowinsql['astatus']."</td>";
+                                // }
+                                // else{
+                                    echo "<td>".$rowinsql['astatus']."</td>";
+                                // }
+                                
                             }
                         }	
                         $p="select count(astatus) from attendance where usn='$ausn' and astatus='present' and sem='$sem' and sec='$sec' and sub_id='$subid' and tid='$tid'";
@@ -129,7 +149,12 @@
                                 $per = ($epr['count(astatus)']/$t)*100;
                             else
                                 $per=0;
-                        echo "<td>".$per."</td>";
+                        if($per<=75){
+                            echo "<td bgcolor='red'>".$per."</td>";
+                        }
+                        else{
+                            echo "<td>".$per."</td>";
+                        }
                         echo "</tr>";
                         }
                         
@@ -139,6 +164,10 @@
         ?>
         </table>
     </center>
+    <footer class="footer">
+        <p>&copy; 2024 Student's Attendance Management System. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="about.html">About</a></p>
+    </footer>
 </body>
 
 </html>

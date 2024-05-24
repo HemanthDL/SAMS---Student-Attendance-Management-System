@@ -9,8 +9,8 @@
         $dept=$_SESSION['dept'];
         $adate=$_SESSION['adate'];
         $subid=$_SESSION['sub_id'];
-                $sem=$_SESSION['sem'];
-                $sec=$_SESSION['sec'];
+        $sem=$_SESSION['sem'];
+        $sec=$_SESSION['sec'];
         if(isset($_POST['submit_attendance'])){
             $attendanceValues = $_POST['attendance'];
         
@@ -25,7 +25,8 @@
                 }
             }
         
-            echo "Attendance data submitted successfully!";
+            // echo "Attendance data submitted successfully!";
+            echo "<script type='text/javascript'>alert('Attendance data submitted successfully!')</script>";
         }
         ?>
 </body>

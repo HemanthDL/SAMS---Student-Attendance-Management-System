@@ -60,7 +60,7 @@
                     $sql="select * from Teacher where id='$tid'";
                     $res=$conn->query($sql);
                     $r=$res->fetch_assoc();
-                    echo "<img src='https://thumbs.dreamstime.com/b/teacher-icon-flat-style-illustration-web-125576005.jpg' alt='Teacher Image'>"; // Add your image source here
+                    echo "<img src='https://thumbs.dreamstime.com/b/teacher-icon-flat-style-illustration-web-125576005.jpg' alt='Teacher Image'>"; 
                     echo "<div>";
                     echo "Name : ".$r['name']."<br>";
                     echo "Department : ".$r['dept']."<br>";

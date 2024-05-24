@@ -5,11 +5,59 @@
     <meta charset="roman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Main</title>
+    <link rel="stylesheet" type="text/css" href="../Admin/admin.css">
     <link rel="stylesheet" href="../Teacher/attendence.css">
+    <style>
+        .att-teas{
+            position:absolute;
+            bottom: 170px;
+            right: 650px;
+            z-index: 1;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:25px;
+        }
+        .admin-option{
+            margin:25px;
+        }
+        .container{
+            margin-top:50px;
+        }
+        .info{
+            font-size:larger;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            margin-top:200px; 
+            text-align: left;
+        }
+        .info img {
+            margin: 15px 0;
+            max-width: 100px; 
+            border-radius:50%;
+        }
+        h2{
+            position: absolute;
+            top:125px;
+            left:645px;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>
+<nav class="navbar">
+        <ul>
+            <li><a href="studentmain.php">HOME</a></li>
+            <li><a href="adminlogin.php">ADMIN</a></li>
+            <li><a href="../Teacher/teacherlogin.php">TEACHER</a></li>
+            <li><a href="../Student/studentlogin.php">STUDENT</a></li>
+        </ul>
+</nav>
+<div class="container">
+        <div class="info">
+            <h2>Student Details</h2>
         <center>
             <?php
                 include('../connection.php');
@@ -30,7 +78,6 @@
                 
         ?>
         </center>
-    </h2>
     <br><br><br>
     <?php
             echo "<h3><center>Attendance Available for the following Courses Only : <br><br>";
@@ -51,10 +98,8 @@
 
         </form>
         <br>
-        <form method="post" action="studentmain.php"><input type="submit" name="submit" value="return to main page">
-        </form>
         <br><br>
-        <table class="designtable" border="1" bgcolor="#FFF5EE">
+        <table class="designtable">
             <tr>
                 <th>Roll No.</th>
                 <th>USN</th>
@@ -123,6 +168,13 @@
         ?>
         </table>
     </center>
+    </div>
+</div>
+        
+    <footer class="footer">
+        <p>&copy; 2024 Student's Attendance Management System. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="about.html">About</a></p>
+    </footer>
 </body>
 
 </html>

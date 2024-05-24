@@ -10,9 +10,31 @@ body {
     line-height: 1.6;
     height: 100vh;
     width: 100vw;
-    background: url('WhatsApp\ Image\ 2024-05-24\ at\ 06.27.14.jpeg') no-repeat center center/cover; /* Update the URL */
+    background: url('https://edtimes.in/wp-content/uploads/2017/11/3-idiots-1140x760.jpg') no-repeat center center/cover; /* Update the URL */
     margin: 0;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    background: url("https://edtimes.in/wp-content/uploads/2017/11/3-idiots-1140x760.jpg") no-repeat center center/cover;
+    filter: blur(3px); /* Adjust the blur value as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the pseudo-element is behind other content */
+}
+
 
 .container {
     display: flex;

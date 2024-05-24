@@ -5,11 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../Admin/admin.css">
     <link rel="stylesheet" href="attendence.css">
+    <style>
+    </style>
 </head>
 
 <body>
-    <table>
+<nav class="navbar">
+        <ul>
+            <li><a href="teachermain.php">HOME</a></li>
+            <li><a href="adminlogin.php">ADMIN</a></li>
+            <li><a href="../Teacher/teacherlogin.php">TEACHER</a></li>
+            <li><a href="../Student/studentlogin.php">STUDENT</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="info">
+        <table>
         <form method="post" action="markattendance.php">
             <tr>
                 <td align="left">Date</td>
@@ -26,14 +39,13 @@
             $subsql="select distinct sub_id from assignclass where tid='$tid' and dept='$dept' order by sub_id";
             $exesub=$conn->query($subsql);
             if($exesub == true){
-                
-
-                echo "Subject : <select name='sub_id'>";
+                $i=0;
+                echo "<tr><td>Subject :</td><td> <select name='sub_id'>";
                 while($rsub=$exesub->fetch_assoc()){
                     echo "<option value='".$rsub['sub_id']."'>".$rsub['sub_id']."</option>";
                     $i=$i+1;
                 }
-                echo "</select><br>";
+                echo "</select></td></tr>";
             }
 
             $subsql="select distinct sem from assignclass where tid='$tid' and dept='$dept' order by sem";
@@ -41,12 +53,12 @@
             if($exesub == true){
                 
 
-                echo "Semester : <select name='sem'>";
+                echo "<tr><td>Semester : </td><td><select name='sem'>";
                 while($rsub=$exesub->fetch_assoc()){
                     echo "<option value='".$rsub['sem']."'>".$rsub['sem']."</option>";
                     $i=$i+1;
                 }
-                echo "</select><br>";
+                echo "</select></td></tr>";
             }
 
             $subsql="select distinct sec from assignclass where tid='$tid' and dept='$dept' order by sec asc";
@@ -54,17 +66,14 @@
             if($exesub == true){
                 
 
-                echo "Section : <select name='sec'>";
+                echo "<tr><td>Section : </td><td><select name='sec'>";
                 while($rsub=$exesub->fetch_assoc()){
                     echo "<option value='".$rsub['sec']."'>".$rsub['sec']."</option>";
                     $i=$i+1;
                 }
-                echo "</select><br>";
+                echo "</select></td></tr>";
             }
         ?>
-            <br><br>
-            <br>
-            <br>
             <tr>
                 <td></td>
                 <td align="left"><input type="submit" name="submit" value="Submit"></td>
@@ -106,17 +115,13 @@
 
         <tr></tr>
         <tr></tr>
-        <form method="post" action="teachermain.php">
-            <tr>
-                <td></td>
-                <td align="left"><input type="submit" name="submit" value="return to main page"></td>
-            </tr>
-        </form>
     </table>
+        </div>
+    </div>
     <br><br>
     <center>
         <form method='post' action='markattendance1.php'>
-            <table class="designtable" border='1' bgcolor='#FFF5EE'>
+            <table class="designtable">
                 <tr>
                     <th>USN</th>
                     <th>Student Name</th>
@@ -192,6 +197,10 @@
             <input type='submit' name='submit_attendance' value='Submit'>
         </form>
     </center>
+    <footer class="footer">
+        <p>&copy; 2024 Student's Attendance Management System. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="about.html">About</a></p>
+    </footer>
 </body>
 
 </html>

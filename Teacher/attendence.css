@@ -4,7 +4,12 @@
     width: 100%;
   }
   
-  .designtable th, td {
+  .designtable th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  .designtable td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;

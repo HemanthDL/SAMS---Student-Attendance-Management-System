@@ -2,9 +2,45 @@
 
 <head>
     <title>Student</title>
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <link rel="stylesheet" type="text/css" href="../Teacher/attendence.css">
 </head>
 
 <body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../main.html">HOME</a></li>
+            <li><a href="adminlogin.php">ADMIN</a></li>
+            <li><a href="../Teacher/teacherlogin.php">TEACHER</a></li>
+            <li><a href="../Student/studentlogin.php">STUDENT</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <main class="main-content">
+            <div class="admin-options">
+                <div class="admin-option">
+                    <a href="admin_addsub.php">
+                        <button>ADD SUBJECT</button>
+                    </a>
+                </div>
+                <div class="admin-option">
+                    <a href="admin_addt.php">
+                        <button>ADD TEACHER</button>
+                    </a>
+                </div>
+                <div class="admin-option">
+                    <a href="admin_addst.php">
+                        <button>ADD STUDENT</button>
+                    </a>
+                </div>
+                <div class="admin-option">
+                    <a href="assignclass.php">
+                        <button>ASSIGN CLASS</button>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
     <center>
         <br><br><br><br><br><br>
         <h2>Deatils of Student</h2>
@@ -39,12 +75,6 @@
                     <td align="left"><input type="submit" value="Add Student"></td>
                 </tr>
             </form>
-            <form method="post" action="admin.html">
-                <tr>
-                    <td></td>
-                    <td align="left"><input type="submit" name="submit" value="home"></td>
-                </tr>
-            </form>
         </table>
     </center>
     <?php
@@ -76,7 +106,7 @@
                 </tr>
             </form>
         </table>
-        <table border="1" bgcolor="#FFF5EE">
+        <table class="designtable">
             <tr>
                 <th>USN</th>
                 <th>NAME</th>
@@ -100,6 +130,10 @@
         ?>
         </table>
     </center>
+    <footer class="footer">
+        <p>&copy; 2024 Student's Attendance Management System. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="about.html">About</a></p>
+    </footer>
 </body>
 
 </html>

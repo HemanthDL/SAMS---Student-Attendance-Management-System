@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="attendence.css">
 </head>
 
 <body>
@@ -68,7 +69,7 @@
     </form><br><br>
     <center>
 
-        <table border="1" bgcolor="#FFF5EE">
+        <table class="designtable" border="1" bgcolor="#FFF5EE">
             <tr>
                 <th>Roll No.</th>
                 <th>USN</th>

@@ -1,0 +1,46 @@
+/* CSS for styling the table */
+.designtable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .designtable th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .designtable th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  .designtable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .designtable tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* CSS for gradient background */
+  .designtable{
+    background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%);
+  }
+  
+  /* CSS for hover effects */
+  .designtable tr:hover {
+    background: linear-gradient(to bottom, #FFFFFF 0%, #E6E6E6 100%);
+    transition: background 0.3s ease;
+  }
+  
+  /* CSS for animations */
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadein 1s;
+  }
+  

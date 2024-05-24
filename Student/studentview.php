@@ -5,6 +5,7 @@
     <meta charset="roman">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Main</title>
+    <link rel="stylesheet" href="../Teacher/attendence.css">
 </head>
 
 <body>
@@ -53,7 +54,7 @@
         <form method="post" action="studentmain.php"><input type="submit" name="submit" value="return to main page">
         </form>
         <br><br>
-        <table border="1" bgcolor="#FFF5EE">
+        <table class="designtable" border="1" bgcolor="#FFF5EE">
             <tr>
                 <th>Roll No.</th>
                 <th>USN</th>

@@ -3,10 +3,11 @@
 <head>
     <title>Subject</title>
     <link rel="stylesheet" type="text/css" href="admin.css">
+    <link rel="stylesheet" type="text/css" href="../Teacher/attendence.css">
 </head>
 
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <ul>
             <li><a href="../main.html">HOME</a></li>
             <li><a href="adminlogin.php">ADMIN</a></li>
@@ -63,12 +64,6 @@
                 </tr>
             </form>
             <br><br>
-            <form method="post" action="admin.html">
-                <tr>
-                    <td></td>
-                    <td align="left"><input type="submit" name="submit" value="home"></td>
-                </tr>
-            </form>
     </center>
 
     <?php
@@ -99,7 +94,7 @@
                 </tr>
             </form>
         </table>
-        <table border="1" bgcolor="#FFF5EE">
+        <table class="designtable">
             <tr>
                 <th>Subject ID</th>
                 <th>Subject Nmae</th>

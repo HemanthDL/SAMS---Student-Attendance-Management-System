@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar">
         <ul>
-            <li><a href="studentmain.php">HOME</a></li>
+            <li><a href="teachermain.php">HOME</a></li>
             <li><a href="adminlogin.php">ADMIN</a></li>
             <li><a href="../Teacher/teacherlogin.php">TEACHER</a></li>
             <li><a href="../Student/studentlogin.php">STUDENT</a></li>

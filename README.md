@@ -1,6 +1,7 @@
 # SAMS---Student-Attendance-Management-System
 
-Authors :
+<b>Authors :</b>
+<br>
 Ganesh S Pandith
 <br>
 Hemanth DL
